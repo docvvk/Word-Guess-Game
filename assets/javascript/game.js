@@ -1,11 +1,11 @@
-var selectableWords =           // Word list
+var words =           // Word list
     ["javascript", "algorithm", "framework", "computer", "hangman", "jquery", "developer"];
 const maxTries = 10;            // Maximum number of tries player has
 
 var guessedLetters = [];        // Stores the letters the user guessed
-var currentWordIndex;           // Index of the current word in the array
+var randomNum;                  // Index of the current word in the array
 var guessingWord = [];          // This will be the word we actually build to match the current word
-var remainingGuesses = 0;       // How many tries the player has left
+var remainingGuesses = 0;       // Tries the player has left
 var hasFinished = false;        // Flag for 'press any key to try again'     
 var wins = 0;                   // How many wins has the player racked up
 
@@ -19,7 +19,7 @@ function resetGame() {
     remainingGuesses = maxTries;
 
     // Use Math.floor to round the random number down to the nearest whole.
-    currentWordIndex = Math.floor(Math.random() * (selectableWords.length));
+    randomNum = Math.floor(Math.random() * (words.length));
 
     // Clear out arrays
     guessedLetters = [];
@@ -29,7 +29,7 @@ function resetGame() {
     document.getElementById("hangmanImage").src = "";
 
     // Build the guessing word and clear it out
-    for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
+    for (var i = 0; i < words[randomNum].length; i++) {
         guessingWord.push("_");
     }   
 
@@ -54,7 +54,6 @@ function updateDisplay() {
         guessingWordText += guessingWord[i];
     }
 
-    //
     document.getElementById("currentWord").innerText = guessingWordText;
     document.getElementById("remainingGuesses").innerText = remainingGuesses;
     document.getElementById("guessedLetters").innerText = guessedLetters;
@@ -73,8 +72,8 @@ function evaluateGuess(letter) {
     var positions = [];
 
     // Loop through word finding all instances of guessed letter, store the indicies in an array.
-    for (var i = 0; i < selectableWords[currentWordIndex].length; i++) {
-        if(selectableWords[currentWordIndex][i] === letter) {
+    for (var i = 0; i < words[randomNum].length; i++) {
+        if(words[randomNum][i] === letter) {
             positions.push(i);
         }
     }
