@@ -12,16 +12,10 @@
 </head>
 
 <body>
-    <div class="container">
-        <img id="title-image" class="col-xl-8 col-md-8 col-sm-10 col-xs-10" src="assets/images/hangman-title.png" alt="Hangman Title Image" />
+    <div class="container gutter-2">
+        <img id="title-image" class="col-xl-8 col-lg-8 col-md-8 col-sm-10 col-xs-10" src="assets/images/hangman-title.png" alt="Hangman Title Image" />
         <div class="row">
-            <div class="col-md-6 gameplay-column">
-                <img id="youwin-image" class="col-12" src="assets/images/youwin.jpeg" alt="Winning Image" />
-                <img id="gameover-image" class="col-12" src="assets/images/gameover.png" alt="Game Over Image" />
-                <h2 id="pressKeyTryAgain">Press Any Key to Try Again!</h2>
-                <img id="hangmanImage" src="" alt="" />
-            </div>
-            <div class="col-md-6 gameplay-column">
+            <div class="col-md-6 gameplay-column one">
                 <h2>Press Any Key to Get Started!</h2>
                 <h4>Wins</h4>
                 <h5 id="totalWins"></h5>
@@ -31,6 +25,12 @@
                 <h6 id="remainingGuesses"></h6>
                 <h4>Letters Guessed</h4>
                 <h3 id="guessedLetters"></h3>
+            </div>
+            <div class="col-md-6 gameplay-column">
+                <img id="youwin-image" class="col-12" src="assets/images/youwin.jpeg" alt="Winning Image" />
+                <img id="gameover-image" class="col-12" src="assets/images/gameover.png" alt="Game Over Image" />
+                <h2 id="pressKeyTryAgain">Press Any Key to Try Again!</h2>
+                <img id="hangmanImage" src="" alt="" />
             </div>
         </div>
     </div>
